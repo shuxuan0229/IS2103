@@ -15,6 +15,7 @@ import entity.StaffEntity;
 import java.util.Scanner;
 import util.exception.CustomerNotFoundException;
 import util.exception.InvalidLoginCredentialException;
+import util.exception.StaffNotFoundException;
 
 /**
  *
@@ -100,7 +101,8 @@ public class MainApp {
                 System.out.println("Invalid login credential: " + ex.getMessage() + "\n");
                 
                 throw new InvalidLoginCredentialException();
-            
+            } catch (StaffNotFoundException staffEx) {
+                
             }
         } else {
             System.out.println("Invalid login credential!");
